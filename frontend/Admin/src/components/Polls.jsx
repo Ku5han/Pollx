@@ -52,7 +52,7 @@ export function Polls() {
     if (!confirm("Are you sure you want to delete this poll?")) return;
 
     try {
-      await axios.delete(`http://localhost:8000/api/v1/admin/polls/${pollId}`);
+      await axios.delete(`https://pollx-backend.onrender.com/api/v1/admin/polls/${pollId}`);
       setPolls(polls.filter((poll) => poll._id !== pollId));
     } catch (error) {
       console.error("Error deleting poll:", error);
