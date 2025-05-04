@@ -16,7 +16,7 @@ export function Users() {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/admin/users"
+        "https://pollx-backend.onrender.com/api/v1/admin/users"
       );
       setUsers(response.data);
     } catch (error) {
@@ -31,7 +31,7 @@ export function Users() {
 
     try {
       // Delete user and their polls
-      await axios.delete(`http://localhost:8000/api/v1/admin/users/${userId}`);
+      await axios.delete(`https://pollx-backend.onrender.com/api/v1/admin/users/${userId}`);
       setUsers(users.filter((user) => user._id !== userId));
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -52,7 +52,7 @@ export function Users() {
     if (!selectedUser) return;
 
     try {
-      await axios.post(`http://localhost:8000/api/v1/admin/users/${selectedUser._id}/ban`, {
+      await axios.post(`https://pollx-backend.onrender.com/api/v1/admin/users/${selectedUser._id}/ban`, {
         duration: banDuration // Duration in days
       });
       
