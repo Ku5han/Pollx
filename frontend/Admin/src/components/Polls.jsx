@@ -34,7 +34,7 @@ export function Polls() {
   const handleSave = async (pollId) => {
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/v1/admin/polls/${pollId}`,
+        `https://pollx-backend.onrender.com/api/v1/admin/polls/${pollId}`,
         {
           question: editQuestion,
         }
