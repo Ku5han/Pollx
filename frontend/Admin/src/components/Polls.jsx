@@ -14,7 +14,7 @@ export function Polls() {
   const fetchPolls = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8000/api/v1/admin/polls"
+        "https://pollx-backend.onrender.com/api/v1/admin/polls"
       );
       // console.log(response.data);
       setPolls(response.data);
